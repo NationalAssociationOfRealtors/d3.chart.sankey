@@ -415,10 +415,10 @@ function getConnectionsNode(o, direction) {
   var links = [o];
   direction = direction || 'both';
 
-  if ((direction == 'source' && o.sourceLinks.length < 2) || direction == 'both') {
+  if ((direction == 'source') || direction == 'both') {
     o.targetLinks.forEach(function(p) { links = links.concat(getConnectionsLink(p, direction)); });
   }
-  if ((direction == 'target' && o.targetLinks.length < 2) || direction == 'both') {
+  if ((direction == 'target') || direction == 'both') {
     o.sourceLinks.forEach(function(p) { links = links.concat(getConnectionsLink(p, direction)); });
   }
 
